@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Converter</h1>
+        
+        <!-- Input Section -->
+        <div id="dropzone" class="dropzone">
+            <p>Drag & Drop or Click to Upload</p>
+            <input type="file" id="fileInput" accept="image/*" hidden>
+        </div>
+        <div id="inputPreview" hidden> <!-- Add hidden here -->
+            <img id="inputImage" src="" alt="Input Preview" hidden>
+            <p id="dimensions">Dimensions: N/A</p>
+            <label>Resize (px): 
+                <input type="number" id="width" placeholder="Width" min="1">
+                <input type="number" id="height" placeholder="Height" min="1">
+            </label>
+        </div>
+
+        <!-- Output Section -->
+        <div id="outputSection" hidden>
+            <h2>Output</h2>
+            <img id="outputImage" src="" alt="Output Preview">
+            <select id="formatSelect">
+                <option value="image/png">PNG</option>
+                <option value="image/jpeg">JPEG</option>
+                <option value="image/webp">WebP</option>
+            </select>
+            <button id="convertBtn">Convert</button>
+            <button id="downloadBtn" disabled>Download</button>
+            <div id="qualitySliderContainer">
+                <label for="qualitySlider">Quality (0-100):</label>
+                <input type="range" id="qualitySlider" min="0" max="100" value="80">
+                <span id="qualityValue">80</span>
+            </div>
+            
+            <p id="fileSizeEstimate">Estimated File Size: N/A</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
